@@ -1,0 +1,75 @@
+.cars-sale-hero {
+    margin: auto;
+    padding-top: 100px;
+}
+
+.car-list-hero {
+   display: grid;
+   grid-template-columns: 400px;
+   grid-template-rows: repeat(auto-fit, 1000px);
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+}
+
+.car-hero-card{
+    display: grid;
+    grid-template-columns: 370px;
+    grid-template-rows: 270px 65px 65px 200px;
+    
+    grid-template-areas: 
+
+    "hero-img"
+    "price-tag"
+    "car-name"
+    "car-info";
+
+    @include breakpoint(tablet){
+        grid-template-columns: repeat(2, 300px);
+        grid-template-rows: repeat(8, 50px);
+        grid-template-areas: 
+        "hero-img price-tag"
+        "hero-img car-name"
+        "hero-img car-info"
+        "hero-img car-info"
+        "hero-img car-info"
+        "hero-img car-info"
+        "car-sub-img-container car-sub-img-container"
+        "car-sub-img-container car-sub-img-container"
+        ;
+
+    }
+    @include breakpoint(desktop){
+
+    }
+    img {
+        object-fit: cover;
+        object-position: center; 
+        
+    }
+}
+
+
+.hero-img {
+    grid-area: hero-img;
+    @include hw100(270px, 370px);
+    img {
+        @include hw100(270px, 370px);
+    }
+}
+
+.price-tag{
+    grid-area: price-tag;
+}
+
+.car-name {
+    grid-area: car-name;
+}
+
+.car-info {
+    grid-area: car-info;
+}
+.car-sub-img-container{
+    grid-area: car-sub-img-container;
+    display: none;
+}

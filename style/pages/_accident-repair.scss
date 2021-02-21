@@ -1,0 +1,125 @@
+.repairs-hero{
+display: block;
+width: 400px;
+padding-top: 100px;
+margin: 0 auto 0 auto;
+
+}
+.repairs-cards {
+
+    display: grid;
+    grid-template-columns:  281px;
+    grid-template-rows: repeat(4, 720px);
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    @include breakpoint(tablet){
+        grid-template-columns:  562px;
+    grid-template-rows: repeat(4, 360px);
+    }
+}
+
+.repairs-card {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.repairs-card-img {
+  
+    @include hw100(360px, 281px);
+    object-fit: cover;
+    object-position: center;  
+    @include borderRadius(15px, 15px, 0 ,0);
+   
+   @include breakpoint(tablet){
+       @include hw100(360px, 281px);
+       flex: 0 0 50%;
+       @include borderRadius(15px, 0, 0, 15px);
+   }
+}
+
+.img-container{
+    position: relative;
+}
+.img-container::after{
+    content: '';
+    position:absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    @include hw100(360px, 281px);
+    @include linearGradient (left,$darkPurple, $darkBlue);
+    opacity: 0.6;
+    @include borderRadius(15px, 15px, 0 ,0);
+   
+   @include breakpoint(tablet){
+       @include hw100(360px, 281px);
+       flex: 0 0 50%;
+       @include borderRadius(15px, 0, 0, 15px);
+   }  
+}
+
+.img-reverse::after  {
+  
+@include linearGradient (right,$darkPurple, $darkBlue);
+        @include breakpoint(tablet){
+        @include hw100(360px, 281px);
+        @include borderRadius(0, 15px, 15px, 0);
+    }
+}
+
+
+
+
+
+
+
+
+.repairs-card-info {
+  
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    // mixin
+    @include linearGradient (right,$darkPurple, $darkBlue);
+    @include hw100(360px, 281px);
+    @include borderRadius(0, 0, 15px, 15px);
+    //mixin  
+
+    h3 {
+        margin-bottom: 10px;
+        text-align: left;
+    }
+    p {
+        text-align: left;
+        margin:0 auto;
+        padding-top: 10px;
+    }
+    @include breakpoint(tablet){
+        flex: 0 0 50%;
+        @include borderRadius(0, 15px, 15px, 0);
+
+    }
+}
+
+.repairs-card-revers {
+    @include linearGradient (left,$darkPurple, $darkBlue);
+}
+
+.repairs-card:nth-child(even){
+    @include breakpoint(tablet){
+        flex-direction: row-reverse;
+        .repairs-card-img{
+            @include borderRadius(0, 15px, 15px, 0);
+        }
+        .repairs-card-info{
+            @include borderRadius(15px, 0, 0, 15px);
+        }
+    }
+}

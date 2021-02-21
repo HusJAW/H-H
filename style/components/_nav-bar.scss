@@ -1,0 +1,92 @@
+
+//mobile burger menu max width 414px
+
+header {
+    position: fixed;
+    background:$navBarColor;
+    color: $white;
+    height: 100px;
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    z-index: 100;
+    
+}
+
+.checkbox {
+    display: none;
+}
+
+.burger-icon-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: absolute;
+    right: 32px;
+}
+
+.burger-line {
+    width: 35px;
+    height: 3px;
+    background:$white;
+    margin: 5px;
+}
+
+.nav-link-container {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    background: $navBarColor;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items:center; 
+    padding: 10px;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: 250ms ease-in-out;
+}
+
+.nav-link-container a {
+    padding:10px;
+    text-decoration: none;
+    color: $white;
+}
+
+.checkbox:checked ~ .nav-link-container {
+    transform: scale(1,1);
+}
+
+.contact-btn {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    @include linearGradient (right,$darkPurple, $darkBlue);
+}
+
+// start change icone to x when clicked 
+
+.checkbox:checked ~ .burger-icon-container span:nth-child(1) {
+    transform: rotate(45deg) translate(9px, 8px);
+    
+}
+
+.checkbox:checked ~ .burger-icon-container span:nth-child(2) {
+    transform: rotate(0deg) scale(1, 1);
+    opacity: 0;
+}
+
+.checkbox:checked ~ .burger-icon-container span:nth-child(3) {
+    transform: rotate(-45deg) translate(10px, -10px);
+    
+}
+
+// end change icone to x when clicked 
+
+// mobile burger menue max width 414px

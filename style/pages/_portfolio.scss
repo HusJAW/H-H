@@ -1,0 +1,73 @@
+//page heading code 
+.portfolio-hero {
+    margin: auto;
+    padding-top: 100px;
+}
+
+//end of page heading code 
+
+
+
+
+.logos-container{
+    display: grid;
+    grid-template-columns: repeat(1, 300px);
+    grid-template-rows: repeat(6, 300px);
+    justify-content: center;
+    gap:10px;
+    padding-bottom: 5rem;
+    @include breakpoint(tablet){
+        grid-template-columns: repeat(2, 300px);
+        grid-template-rows: repeat(3, 300px);
+    }
+}
+
+.logo-container {
+    @include hw100();
+    display: flex;
+justify-content: center;
+align-items: center;
+&:nth-child(1), &:nth-child(3),&:nth-child(6), &:nth-child(4) {
+    img {
+        @include hw100(auto, 210px);
+    }
+}
+
+}
+// company logo img
+.company-logo {
+@include hw100(auto, 300px);
+object-fit: cover;
+object-position: center; 
+}
+// car portfolio styling 
+
+
+.port-images-container {
+    display: grid;
+    grid-template-columns: repeat(1, 400px);
+    grid-template-rows: repeat(6, 300px);
+    justify-content: center;
+    gap:10px;
+    padding-bottom: 5rem;
+    @include breakpoint(tablet){
+        grid-template-columns: repeat(2, 400px);
+        grid-template-rows: repeat(3, 300px);
+    }
+}
+
+
+
+.port-img-container{
+    @include hw100();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.port-img {
+    @include hw100();
+    object-fit: cover;
+    object-position: center; 
+
+}

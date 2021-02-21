@@ -1,0 +1,33 @@
+// media query for different screen sizes
+
+@mixin breakpoint($point) {
+    @if ($point == tablet) {
+        @media screen and (min-width: 600px){@content;}
+    }
+
+    @else if ($point == desktop) {
+        @media screen and (min-width: 768px){@content;}
+    }
+}
+
+@mixin linearGradient ($dirction, $colorA, $colorB) {
+  
+    background: linear-gradient(to $dirction, $colorA, $colorB );
+}
+
+
+@mixin hw100($height:100%, $width:100%) {
+    height: $height;
+    width: $width;
+}
+
+@mixin borderRadius($topRight, $topLeft , $bottomRight, $bottomLeft) {
+    border-radius: $topRight $topLeft $bottomRight $bottomLeft;
+}
+
+@mixin grid($column, $row) {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr $column 1fr;
+    grid-template-rows: repeat(4, $row);    
+}
